@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Clock from './Clock';
 
-class TimerContainer extends React.Component {
+class TimerContainer extends Component {
 	constructor(props) {
 		super(props);
 
@@ -10,8 +11,13 @@ class TimerContainer extends React.Component {
 	}
 
 	render() {
-		return (<div>I AM THE TIMER CONTAINER</div>
-			<Clock />
+		return (
+			<div>
+				I AM THE TIMER CONTAINER
+				<br /><br />
+				<Clock />
+				<br />
+			</div>
 		)
 	}
 }

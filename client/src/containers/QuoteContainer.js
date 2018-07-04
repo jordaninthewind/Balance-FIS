@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-class QuoteContainer extends React.Component {
+class QuoteContainer extends Component {
 	constructor(props) {
 		super(props);
 
