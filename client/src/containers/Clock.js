@@ -25,7 +25,10 @@ class Clock extends Component {
 
   render() {
     return(
-      <div>{this.state.timeCount}</div>
+      <div>
+      	<h3>Time Since Start:</h3>
+      	<h1>{this.state.timeCount}</h1>
+      </div>
     );
   }
 }

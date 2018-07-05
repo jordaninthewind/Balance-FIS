@@ -1,17 +1,16 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 import { Jumbotron, Button } from 'react-bootstrap';
 
 export const Welcome = () => {
 	return (
 		<Jumbotron>
-		  <h1>Hello, world!</h1>
+		  <h1>Find Balance!</h1>
 		  <p>
-		    This is a simple hero unit, a simple jumbotron-style component for calling
-		    extra attention to featured content or information.
+		    Balance is a simple app to track your daily meditation, find inspiration through quotes and resources, and track progress.
 		  </p>
 		  <p>
-		    <Button bsStyle="primary">Learn more</Button>
+		    <Button bsStyle="primary">Login</Button>
 		  </p>
 		</Jumbotron>
 	);
