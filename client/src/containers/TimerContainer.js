@@ -12,8 +12,8 @@ class TimerContainer extends Component {
 
 	render() {
 		return (
-			<div>
-				I AM THE TIMER CONTAINER
+			<div className="App-footer">
+				THIS IS THE TIMER CONTAINER
 				<br /><br />
 				<Clock />
 				<br />
