@@ -18,7 +18,6 @@ class QuoteContainer extends Component {
 	}
 
 	componentDidMount() {
-    	// this.intervalId = 
     	setInterval(this.selectQuote.bind(this), 15000);
     }
 

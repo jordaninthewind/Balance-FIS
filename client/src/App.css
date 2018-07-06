@@ -36,7 +36,14 @@
 }
 
 .App-header {
-  background-color: rgba(100,20,255,.35);
+  background-color: rgba(100,20,255,.2);
+  font-size: 1.2em;
+  color: white;
+  padding: 5px;
+}
+
+.App-timer {
+  background-color: rgba(100,20,255,.1);
   font-size: 1.2em;
   color: white;
   padding: 5px;

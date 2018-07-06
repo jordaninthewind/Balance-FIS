@@ -3,6 +3,7 @@ import NavBar from './components/NavBar.js';
 import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import QuoteContainer from './containers/QuoteContainer';
+import UserContainer from './containers/UserContainer';
 import TimerContainer from './containers/TimerContainer';
 import Welcome from './components/Welcome';
 import './App.css';
@@ -15,12 +16,15 @@ class App extends Component {
           <BrowserRouter>
             <Switch>
              <div>
-              <Link to="/" activeStyle={{background: 'darkblue'}}>Home</Link>
-              <Link to="/user" exact activeStyle={{ background: 'darkblue' }}>Account</Link>
+              <Link to="/" >Home</Link>
+              <span>  -  </span> 
+              <Link to="/user" exact >Account</Link>
+              <span>  -  </span> 
               <Link to="/user" exact activeStyle={{ background: 'darkblue' }}>Meditation Sessions</Link>
-              <Link to="/timer" exact activeStyle={{ background: 'darkblue' }}>Timer</Link>
+              <span>  -  </span> 
+              <Link to="/timer" exact >Timer</Link>
               <Route exact path="/" component={Welcome} />
-              <Route exact path="/user" component={Welcome} />
+              <Route exact path="/user" component={UserContainer} />
               <Route path="/timer" component={TimerContainer} />
               </div>
             </Switch>

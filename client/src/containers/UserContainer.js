@@ -1,25 +1,22 @@
 import React, { Component } from 'react';
-import Clock from './Clock';
+import UserInfo from '../components/UserInfo'
 
-class TimerContainer extends Component {
+class UserContainer extends Component {
 	constructor(props) {
 		super(props);
 
-		this.state = {
-			time: 0,
-		}
 	}
 
 	render() {
 		return (
 			<div className="App-timer">
-				Timer Container
+				This is the user Container
 				<br /><br />
-				<Clock />
+				<UserInfo />
 				<br />
 			</div>
 		)
 	}
 }
 
-export default TimerContainer;
+export default UserContainer;
