@@ -1,12 +1,12 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'; 
+import { Switch, Link, Route } from 'react-router-dom'; 
+import TimerContainer from '../containers/TimerContainer';
 
 const NavBar = () => {
   return (
-  <Switch>
-     <Link to="/" exact style={link} activeStyle={{background: 'darkblue'}}>Home</NavLink>
-     <Link to="/meditation_sessions" exact style={link} activeStyle={{ background: 'darkblue' }}>Actors</NavLink>
-  </Switch>
+	  <div>
+	  	<h1>WELCOME TO BALANCE</h1>
+	  </div>
   );
 };
 

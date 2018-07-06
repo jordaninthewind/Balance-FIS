@@ -2,7 +2,7 @@ import React from 'react';
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import { Jumbotron, Button } from 'react-bootstrap';
 
-export const Welcome = () => {
+const Welcome = () => {
 	return (
 		<Jumbotron>
 		  <h1>Find Balance!</h1>
