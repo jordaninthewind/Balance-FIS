@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import { Grid, Row } from 'react-bootstrap';
 
-const dummyQuotes = [{content: "BizzleBub", author: "Paul van den Buyer"}, {content: "Fugglebugs and fiddlesticks", author: "Scrappy Doo"}]
+const dummyQuotes = [
+	{content: "BizzleBub", author: "Paul van den Buyer"}, 
+	{content: "1Fugglebugs and fiddlesticks", author: "Scrappy Doo"},
+	{content: "2Fugglebugs and fiddlesticks", author: "Scrappy Doo"},
+	{content: "3Fugglebugs and fiddlesticks", author: "Scrappy Doo"},
+	]
 
 class QuoteContainer extends Component {
 	constructor(props) {
@@ -14,7 +19,8 @@ class QuoteContainer extends Component {
 	}
 
 	selectQuote() {
-		this.state.currentQuoteIndex === 0 ? this.setState({currentQuoteIndex: 1}) : this.setState({currentQuoteIndex: 0});
+		const quoteIndex = Math.floor((Math.random() * (dummyQuotes.length - 1) + 0));
+		this.setState({currentQuoteIndex: quoteIndex})
 	}
 
 	componentDidMount() {

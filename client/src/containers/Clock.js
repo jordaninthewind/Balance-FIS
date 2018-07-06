@@ -27,6 +27,9 @@ class Clock extends Component {
 
   pauseClock = (e) => {
     clearInterval(this.intervalId);
+    this.setState({
+        timerStarted: false,
+      })
   }
 
   resetClock = (e) => {
