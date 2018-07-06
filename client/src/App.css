@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background: rgba(100,20,255,.15);
 }
 
 .App-logo {
@@ -32,4 +33,11 @@
   font-size: 1.2em;
   color: white;
   padding: 10px;
+}
+
+.App-header {
+  background-color: rgba(100,20,255,.35);
+  font-size: 1.2em;
+  color: white;
+  padding: 5px;
 }

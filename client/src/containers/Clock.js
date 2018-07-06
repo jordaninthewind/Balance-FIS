@@ -16,7 +16,6 @@ class Clock extends Component {
     })
   }
 
-  // componentDidMount() {
   startClock = (e) => {
   	if (this.state.timerStarted === false) {
     	this.intervalId = setInterval(this.timer.bind(this), 1000);

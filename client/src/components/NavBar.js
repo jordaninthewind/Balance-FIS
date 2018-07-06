@@ -1,25 +1,13 @@
 import React from 'react';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
-// import { Link } from 'react-router';
+import { NavLink } from 'react-router-dom'; 
 
-const NavBar = () => (
-	<Navbar>
-	  <Navbar.Header>
-	    <Navbar.Brand>
-	      <a href="#home">Balance App</a>
-	    </Navbar.Brand>
-	  </Navbar.Header>
-	  <Nav>
-	    <NavDropdown eventKey={1} title="Options" id="basic-nav-dropdown">
-	      <MenuItem eventKey={1.1}>Action</MenuItem>
-	      <MenuItem eventKey={1.2}>Another action</MenuItem>
-	      <MenuItem eventKey={1.3}>Something else here</MenuItem>
-	    </NavDropdown>
-	  </Nav>
-	</Navbar>
-
-	)
+const NavBar = () => {
+  return (
+  <Switch>
+     <Link to="/" exact style={link} activeStyle={{background: 'darkblue'}}>Home</NavLink>
+     <Link to="/meditation_sessions" exact style={link} activeStyle={{ background: 'darkblue' }}>Actors</NavLink>
+  </Switch>
+  );
+};
 
 export default NavBar;
-

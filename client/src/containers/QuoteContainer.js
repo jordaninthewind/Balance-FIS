@@ -9,15 +9,23 @@ class QuoteContainer extends Component {
 		super(props);
 
 		this.state = {
-			content: dummyQuotes[0].content,
-			author: dummyQuotes[0].author,
+			currentQuoteIndex: 0,
 		}
 	}
 
+	selectQuote() {
+		this.state.currentQuoteIndex === 0 ? this.setState({currentQuoteIndex: 1}) : this.setState({currentQuoteIndex: 0});
+	}
+
+	componentDidMount() {
+    	// this.intervalId = 
+    	setInterval(this.selectQuote.bind(this), 15000);
+    }
+
 	render() {
-		return ( 
+		return (
 		  <div className="App-footer">
-			{this.state.content} - {this.state.author}
+			{dummyQuotes[this.state.currentQuoteIndex].content} - {dummyQuotes[this.state.currentQuoteIndex].author}
 		  </div>
 		)
 	}
