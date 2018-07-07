@@ -7,10 +7,10 @@ class UserSelect extends Component {
     this.state = {
       userSelection: null,
     }
+
   }
 
   handleChange = (e) => {
-    debugger;
     this.setState({
       userSelection: e.target.value,
     })
@@ -20,10 +20,10 @@ class UserSelect extends Component {
   render() {
 
     const Users = [
-      {id: 0, name: 'Paul'}, 
-      {id: 1, name: "Gerald"}, 
-      {id: 2, name: "Bafoo"}, 
-      {id: 3, name: "Wilmer"}, 
+      {id: 0, name: "Jordan"}, 
+      {id: 1, name: "Anna"}, 
+      {id: 2, name: "Diego"}, 
+      {id: 3, name: "Homer"}, 
       {id: 4, name: "Magellan"}
       ];
 
@@ -32,7 +32,7 @@ class UserSelect extends Component {
     })
 
     return (
-        <select onChange={(e) => this.handleChange()}>
+        <select onChange={this.handleChange}>
           {userSelection}
         </select>
       );

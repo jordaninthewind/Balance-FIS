@@ -8,8 +8,13 @@
   to { transform: rotate(360deg); }
 }
 
+#body {
+  min-width: 500px
+}
+
 .App-header {
-  background-color: rgba(100,20,255,.3);
+  /*background-color: rgba(100,20,255,.3);*/
+  background: linear-gradient(45deg, rgba(194,190,255,1) 0%, rgba(100,20,255,0.3) 39%, rgba(125,233,255,0.666569472027092) 82%);
   font-size: 1.2em;
   color: white;
   min-height: 10px;
@@ -19,7 +24,7 @@
 }
 
 .App-footer {
-  background-color: rgba(100,20,255,.3);
+  background: linear-gradient(45deg, rgba(194,190,255,1) 0%, rgba(100,20,255,0.3) 39%, rgba(125,233,255,0.666569472027092) 82%);
   font-size: 1.2em;
   color: white;
   padding: 10px;

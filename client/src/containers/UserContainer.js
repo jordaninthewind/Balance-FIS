@@ -10,8 +10,9 @@ class UserContainer extends Component {
 	render() {
 		return (
 			<div className="App-timer">
-				This is the user Container
 				<br /><br />
+				<h1>Current User:</h1>
+				<br />
 				<UserInfo />
 				<br />
 			</div>
