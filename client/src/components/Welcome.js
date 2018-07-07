@@ -1,6 +1,4 @@
 import React from 'react';
-// import 'bootstrap/dist/css/bootstrap.min.css';
-import { Jumbotron, Button } from 'react-bootstrap';
 import UserSelect from './UserSelect'
 
 const Welcome = () => {

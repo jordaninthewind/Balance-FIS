@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavBar from './components/NavBar.js';
-import { BrowserRouter, Route, Link, Switch } from "react-router-dom";
+import { BrowserRouter, Route, Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import QuoteContainer from './containers/QuoteContainer';
 import UserContainer from './containers/UserContainer';
@@ -14,20 +14,18 @@ class App extends Component {
         <div className="App">
           <NavBar />
           <BrowserRouter>
-            <Switch>
-             <div className="App-navbar">
+            <div className="App-navbar">
               <Link to="/" >Home</Link>
               <span>  -  </span> 
-              <Link to="/user" exact >Account</Link>
+              <Link to="/user" >Account</Link>
               <span>  -  </span> 
-              <Link to="/user" exact activeStyle={{ background: 'darkblue' }}>Meditation Sessions</Link>
+              <Link to="/user" >Meditation Sessions</Link>
               <span>  -  </span> 
               <Link to="/timer" exact >Timer</Link>
               <Route exact path="/" component={Welcome} />
               <Route exact path="/user" component={UserContainer} />
               <Route path="/timer" component={TimerContainer} />
-              </div>
-            </Switch>
+            </div>
           </BrowserRouter>
         <QuoteContainer />
       </div>
