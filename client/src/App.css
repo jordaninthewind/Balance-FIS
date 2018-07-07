@@ -8,21 +8,8 @@
   height: 80px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 10px;
-  position: absolute;
-  top: 0px;
-  padding: 20px;
-  color: white;
-}
-
 .App-title {
   font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
 }
 
 @keyframes App-logo-spin {
@@ -31,17 +18,25 @@
 }
 
 .App-footer {
-  background-color: rgba(100,20,255,.2);
+  background-color: rgba(100,20,255,.3);
   font-size: 1.2em;
   color: white;
   padding: 10px;
+  width: 100vw;
+  position: absolute;
+  bottom: 0px;
+
 }
 
 .App-header {
   background-color: rgba(100,20,255,.2);
   font-size: 1.2em;
   color: white;
-  padding: 5px;
+  font-family: Raleway;
+  min-height: 10vh;
+  position: relative;
+  top: 0px;
+  padding: 20px;
 }
 
 .App-timer {

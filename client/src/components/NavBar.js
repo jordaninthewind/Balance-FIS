@@ -4,7 +4,7 @@ import TimerContainer from '../containers/TimerContainer';
 
 const NavBar = () => {
   return (
-	  <div>
+	  <div className="App-header">
 	  	<h1>WELCOME TO BALANCE</h1>
 	  </div>
   );
