@@ -1,10 +1,10 @@
 // import { DropdownButton, MenuItem } from 'react-bootstrap';
 import React from 'react';
 
-const Users = [{id: 0, name: 'Paul'}, {id: 1, name: "Gerald"}, {id: 2, name: "Bafoo"}]
+const Users = [{id: 0, name: 'Paul'}, {id: 1, name: "Gerald"}, {id: 2, name: "Bafoo"}, {id: 3, name: "Wilmer"}]
 
 const userSelection = Users.map(user => {
-  return <a href="#">{user.name}</a>
+  return <p><a href={'/users/' + user.id}>{user.name}</a></p>
 })
 
 

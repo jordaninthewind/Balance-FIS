@@ -15,7 +15,7 @@ class App extends Component {
           <NavBar />
           <BrowserRouter>
             <Switch>
-             <div>
+             <div className="App-navbar">
               <Link to="/" >Home</Link>
               <span>  -  </span> 
               <Link to="/user" exact >Account</Link>

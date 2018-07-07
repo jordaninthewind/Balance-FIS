@@ -1,20 +1,21 @@
 .App {
   text-align: center;
-  background: rgba(100,20,255,.15);
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-title {
-  font-size: 1.5em;
+  font-family: Raleway;
 }
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.App-header {
+  background-color: rgba(100,20,255,.3);
+  font-size: 1.2em;
+  color: white;
+  min-height: 10px;
+  position: relative;
+  top: 0px;
+  padding: 20px 0px 5px 0px;
 }
 
 .App-footer {
@@ -25,23 +26,25 @@
   width: 100vw;
   position: absolute;
   bottom: 0px;
-
-}
-
-.App-header {
-  background-color: rgba(100,20,255,.2);
-  font-size: 1.2em;
-  color: white;
-  font-family: Raleway;
-  min-height: 10vh;
-  position: relative;
-  top: 0px;
-  padding: 20px;
 }
 
 .App-timer {
-  background-color: rgba(100,20,255,.1);
+  background-color: white;
+  color: rgba(100,20,255,.5);
   font-size: 1.2em;
-  color: white;
-  padding: 5px;
+  padding: 25px;
+}
+
+.App-welcome {
+  background-color: white;
+  color: rgba(100,20,255,.5);
+  font-size: 1.2em;
+  height: 80vh;
+  padding: 25px;
+}
+
+.App-navbar {
+  color: rgba(100,20,255,.5);
+  font-size: 1.5em;
+  padding: 5px; 
 }

@@ -13,8 +13,6 @@ class TimerContainer extends Component {
 	render() {
 		return (
 			<div className="App-timer">
-				Timer Container
-				<br /><br />
 				<Clock />
 				<br />
 			</div>

@@ -57,8 +57,8 @@ class Clock extends Component {
 
     return(
       <div>
-      	<h4>Time Since Start:</h4>
-      	<h1>{timeSpentMeditating}</h1>
+      	<h3>Time Since Start:</h3>
+      	<h1 style={{fontSize: '3em'}}>{timeSpentMeditating}</h1>
       		<button onClick={() => this.startClock()} >Start</button>
       		<button onClick={() => this.pauseClock()} >Pause</button>
       		<button onClick={() => this.resetClock()} >Reset</button>
