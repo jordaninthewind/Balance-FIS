@@ -4,3 +4,5 @@ import { combineReducers } from 'redux';
 const rootReducer = combineReducers({
 	quotesReducer,
 })
+
+export default rootReducer;
