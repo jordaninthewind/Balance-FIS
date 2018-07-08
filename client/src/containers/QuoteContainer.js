@@ -20,7 +20,7 @@ class QuoteContainer extends Component {
 
 	selectQuote() {
 		const quoteIndex = Math.floor((Math.random() * (dummyQuotes.length - 1) + 0));
-		this.setState({currentQuoteIndex: quoteIndex})
+		this.setState({currentQuoteIndex: quoteIndex});
 	}
 
 	componentDidMount() {
