@@ -1,6 +1,4 @@
 import React from 'react';
-// import { Switch, Link, Route } from 'react-router-dom'; 
-// import TimerContainer from '../containers/TimerContainer';
 
 const TitleBar = () => {
   return (

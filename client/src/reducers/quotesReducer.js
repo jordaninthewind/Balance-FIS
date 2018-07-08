@@ -6,8 +6,12 @@ const dummyQuotes = [
 	{content: "Fear is a natural reaction to moving closer to the truth.", author: "Pema Chodron"},
 	]
 
+// fetch('http://localhost:3001/quotes.json', {mode: 'cors', creditials: 'include'}).then(res => res.json()).then(json => console.log(json))
+
+
 const initialState = {
 	quotes: dummyQuotes,
+	// quotes: [],
 }
 
 export default function quotesReducer(state = initialState, action) {
@@ -15,7 +19,7 @@ export default function quotesReducer(state = initialState, action) {
 		case "GET_ALL_QUOTES":
 			return {
 				...state,
-				// quotes: action.quotes,
+				quotes: action.quotes,
 			}
 		default:
 			return state;

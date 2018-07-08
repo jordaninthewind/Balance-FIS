@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Quote from '../components/Quote.js'
 
 class QuoteContainer extends Component {
 	constructor(props) {
@@ -22,7 +23,7 @@ class QuoteContainer extends Component {
 	render() {
 		return (
 		  <div className="App-footer">
-			{this.props.quotes[this.state.currentQuoteIndex].content} - {this.props.quotes[this.state.currentQuoteIndex].author}
+		  	<Quote quote={this.props.quotes[this.state.currentQuoteIndex]} />
 		  </div>
 		)
 	}

@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import QuoteContainer from './containers/QuoteContainer';
 import UserContainer from './containers/UserContainer';
+import MeditationSessionsContainer from './containers/MeditationSessionsContainer'
 import TimerContainer from './containers/TimerContainer';
 import Welcome from './components/Welcome';
 import './App.css';
@@ -19,11 +20,12 @@ class App extends Component {
               <span>  -  </span> 
               <Link to="/user" >Account</Link>
               <span>  -  </span> 
-              <Link to="/user" >Meditation Sessions</Link>
+              <Link to="/meditation_sessions" >Meditation Sessions</Link>
               <span>  -  </span> 
               <Link to="/timer" exact >Timer</Link>
               <Route exact path="/" component={Welcome} />
               <Route exact path="/user" component={UserContainer} />
+              <Route exact path="/meditation_sessions" component={MeditationSessionsContainer} />
               <Route path="/timer" component={TimerContainer} />
             </div>
           </BrowserRouter>
