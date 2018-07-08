@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import TitleBar from './components/TitleBar.js';
 import { BrowserRouter, Route, Link } from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
 import QuoteContainer from './containers/QuoteContainer';
 import UserContainer from './containers/UserContainer';
 import MeditationSessionsContainer from './containers/MeditationSessionsContainer'
@@ -22,7 +21,7 @@ class App extends Component {
               <span>  -  </span> 
               <Link to="/meditation_sessions" >Meditation Sessions</Link>
               <span>  -  </span> 
-              <Link to="/timer" exact >Timer</Link>
+              <Link to="/timer" >Timer</Link>
               <Route exact path="/" component={Welcome} />
               <Route exact path="/user" component={UserContainer} />
               <Route exact path="/meditation_sessions" component={MeditationSessionsContainer} />

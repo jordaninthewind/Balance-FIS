@@ -13,6 +13,7 @@ class MeditationSessionsContainer extends Component {
 	render() {
 		return (
 		  <div>
+		    <br /><br />
 		  	This is the Meditation Sessions Controller
 		  </div>
 		)

@@ -24,7 +24,7 @@
 }
 
 .App-footer {
-  background: linear-gradient(50deg, rgba(194,190,255,1) 0%, rgba(100,20,255,0.3) 25%, rgba(125,233,255,0.666569472027092) 82%);
+  background: linear-gradient(45deg, rgba(194,190,255,1) 0%, rgba(100,20,255,0.3) 25%, rgba(125,233,255,0.666569472027092) 82%);
   font-size: 1.2em;
   color: white;
   padding: 10px;
