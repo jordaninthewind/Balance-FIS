@@ -5,7 +5,8 @@ const Users = [
   {id: 1, name: "Anna"}, 
   {id: 2, name: "Diego"}, 
   {id: 3, name: "Homer"}, 
-  {id: 4, name: "Magellan"}
+  {id: 4, name: "Magellan"},
+  {id: 5, name: "Phillip"},
 ];
 
 const initialState = {
