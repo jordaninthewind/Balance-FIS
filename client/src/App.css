@@ -3,18 +3,13 @@
   font-family: Raleway;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 #body {
   min-width: 500px
 }
 
 .App-header {
   /*background-color: rgba(100,20,255,.3);*/
-  background: linear-gradient(45deg, rgba(194,190,255,1) 0%, rgba(100,20,255,0.3) 55%, rgba(125,233,255,0.666569472027092) 82%);
+  background: linear-gradient(45deg, rgba(194,190,255,1) 0%, rgba(100,20,255,0.3) 55%, rgba(125,233,255,0.67) 80%);
   font-size: 1.2em;
   color: white;
   min-height: 10px;
@@ -24,7 +19,7 @@
 }
 
 .App-footer {
-  background: linear-gradient(45deg, rgba(194,190,255,1) 0%, rgba(100,20,255,0.3) 25%, rgba(125,233,255,0.666569472027092) 82%);
+  background: linear-gradient(45deg, rgba(194,190,255,1) 0%, rgba(100,20,255,0.3) 25%, rgba(125,233,255,0.67) 80%);
   font-size: 1.2em;
   color: white;
   padding: 10px;
@@ -36,7 +31,7 @@
 .App-timer {
   background-color: white;
   color: rgba(100,20,255,.5);
-  font-size: 1.2em;
+  font-size: 1em;
   padding: 25px;
 }
 
@@ -52,4 +47,10 @@
   color: rgba(100,20,255,.5);
   font-size: 1.5em;
   padding: 5px; 
+  width: 100%;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
