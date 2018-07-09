@@ -13,7 +13,9 @@ class UserSelectContainer extends Component {
 	}
 
   	componentDidMount() {
-		this.props.getAllUsers();
+  		if (!this.props.currentUser) {
+			this.props.getAllUsers();
+		}
     }
 
 	handleUserSelect = (e) => {
@@ -50,4 +52,3 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserSelectContainer);
-// Map dispatch to props for current user data event?

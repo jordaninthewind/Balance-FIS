@@ -12,7 +12,7 @@ const UserInfo = (props) => {
 
 UserInfo.defaultProps = {
 	name: "",
-	timeSpentMeditating: "",
+	timeSpentMeditating: "4,000,000,000 hours",
 	location: ""
 }
 

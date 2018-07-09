@@ -7,13 +7,10 @@ const UserSelect = props => {
 
     return (
         <select onChange={(e) => props.userChange(e)} >
+          <option disabled selected value>Select a User</option>
           {userSelection}
         </select>
     );
   }
-
-UserSelect.defaultProps = {
-  users: [{id: 3, name: 'Paul'}],
-}
 
 export default UserSelect;
