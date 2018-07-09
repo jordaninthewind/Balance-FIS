@@ -18,11 +18,7 @@ class UserContainer extends Component {
 				<br /><br />
 				<h1>Current User:</h1>
 				<br />
-				{ 
-				  this.props.currentUser && <UserInfo 
-				  currentUserData={currentUserData[0]}
-				  />
-				}
+				{ this.props.currentUser && <UserInfo currentUserData={currentUserData[0]} /> }
 				<br />
 			</div>
 		)
