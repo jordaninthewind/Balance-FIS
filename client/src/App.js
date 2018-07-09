@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import TitleBar from './components/TitleBar.js';
 import { BrowserRouter, Route, Link } from "react-router-dom";
+import TitleBar from './components/TitleBar.js';
 import QuoteContainer from './containers/QuoteContainer';
 import UserContainer from './containers/UserContainer';
 import MeditationSessionsContainer from './containers/MeditationSessionsContainer'
 import TimerContainer from './containers/TimerContainer';
-import Welcome from './components/Welcome';
+import UserSelectContainer from './containers/UserSelectContainer';
 import './App.css';
 
 class App extends Component {
@@ -22,7 +22,7 @@ class App extends Component {
               <Link to="/meditation_sessions" >Meditation Sessions</Link>
               <span>  -  </span> 
               <Link to="/timer" >Timer</Link>
-              <Route exact path="/" component={Welcome} />
+              <Route exact path="/" component={UserSelectContainer} />
               <Route exact path="/user" component={UserContainer} />
               <Route exact path="/meditation_sessions" component={MeditationSessionsContainer} />
               <Route path="/timer" component={TimerContainer} />

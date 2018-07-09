@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import UserSelect from './UserSelect'
+import UserSelect from '../components/UserSelect'
+import { getAllUsers } from '../reducers/usersReducer'
 
-class Welcome extends Component {
+class UserSelectContainer extends Component {
   constructor(props) {
 	super(props);
 
@@ -10,6 +11,11 @@ class Welcome extends Component {
       userSelection: null,
     }
   }
+
+  	componentDidMount() {
+		this.props.getAllUsers();
+    }
+
 
 	handleUserSelect = (e) => {
 		this.setState({
@@ -36,6 +42,9 @@ const mapStateToProps = state => {
   return { users: state.usersReducer.users }
 }
 
+const mapDispatchToProps = dispatch => {
+	return { getAllUsers: () => dispatch(getAllUsers()) }
+}
 
-export default connect(mapStateToProps, null)(Welcome);
+export default connect(mapStateToProps, mapDispatchToProps)(UserSelectContainer);
 // Map dispatch to props for current user data event?

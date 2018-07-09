@@ -1,17 +1,17 @@
 
-
-const Users = [
-  {id: 0, name: "Jordan"}, 
-  {id: 1, name: "Anna"}, 
-  {id: 2, name: "Diego"}, 
-  {id: 3, name: "Homer"}, 
-  {id: 4, name: "Magellan"},
-  {id: 5, name: "Phillip"},
-];
+const setUsers = (users) => {
+	return { type: "GET_ALL_USERS", users }
+}
 
 const initialState = {
-	users: Users,
-	// users: [],
+	// users: Users,
+	users: [],
+}
+
+export const getAllUsers = () => dispatch => {
+	fetch('http://localhost:3001/users.json', {mode: 'cors', creditials: 'include'})
+		.then(res => res.json())
+		.then(json => dispatch(setUsers(json)))
 }
 
 export default function usersReducer(state = initialState, action) {

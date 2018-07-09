@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UserInfo from '../components/UserInfo'
+import { connect } from 'react-redux';
 
 class UserContainer extends Component {
 	constructor(props) {
