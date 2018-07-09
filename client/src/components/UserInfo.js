@@ -10,10 +10,10 @@ const UserInfo = (props) => {
 	);
 }
 
-UserInfo.defaultProps = {
-	name: "",
-	timeSpentMeditating: "4,000,000,000 hours",
-	location: ""
-}
+// UserInfo.defaultProps = {
+// 	name: "",
+// 	timeSpentMeditating: "4,000,000,000 hours",
+// 	location: ""
+// }
 
 export default UserInfo;

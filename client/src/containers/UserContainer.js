@@ -10,7 +10,7 @@ class UserContainer extends Component {
 
 	render() {
 		const currentUserData = this.props.users.filter(user => {
-			return user.id == this.props.currentUser;
+			return user.id.toString() === this.props.currentUser;
 		})
 
 		return (
@@ -18,10 +18,11 @@ class UserContainer extends Component {
 				<br /><br />
 				<h1>Current User:</h1>
 				<br />
-				{ this.props.currentUser && <UserInfo 
-					currentUserData={currentUserData[0]}
-				/>
-			}
+				{ 
+				  this.props.currentUser && <UserInfo 
+				  currentUserData={currentUserData[0]}
+				  />
+				}
 				<br />
 			</div>
 		)

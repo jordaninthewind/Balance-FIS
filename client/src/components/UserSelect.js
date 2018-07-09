@@ -2,7 +2,7 @@ import React from 'react';
 
 const UserSelect = props => {
     const userSelection = props.users.map(user => {
-      return <option value={user.id}>{user.name}</option>
+      return <option key={user.id} value={user.id}>{user.name}</option>
     })
 
     return (
