@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import UserSelect from '../components/UserSelect'
-import { getAllUsers } from '../reducers/usersReducer'
+import { getAllUsers, setCurrentUser } from '../reducers/usersReducer'
 
 class UserSelectContainer extends Component {
   constructor(props) {
@@ -21,6 +21,7 @@ class UserSelectContainer extends Component {
 		this.setState({
 			userSelection: e.target.value,
 		})
+		this.props.setCurrentUser(e.target.value);
 	}
 
 
@@ -43,7 +44,10 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-	return { getAllUsers: () => dispatch(getAllUsers()) }
+	return { 
+		getAllUsers: () => dispatch(getAllUsers()),
+		setCurrentUser: () => dispatch(setCurrentUser())
+	}
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserSelectContainer);
