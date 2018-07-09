@@ -7,9 +7,9 @@ class MeditationSessionsContainer extends Component {
 		super(props);
 	}
 
-	componentDidMount() {
+	// componentDidMount() {
     
-	}
+	// }
 
 	render() {
 		let sessions;
@@ -17,7 +17,7 @@ class MeditationSessionsContainer extends Component {
 	 	if (this.props.currentUser){
 	 		if (this.props.currentUser.meditation_sessions.length > 0) {
 	 			sessions = this.props.currentUser.meditation_sessions.map(session => {
-	 				return <MeditationSession session={session} />
+	 				return <div><MeditationSession session={session} /><hr style={{width: '40%'}}/></div>
 	 			})
 	 		} else {
 	 			sessions = <div>"There are no sessions yet!"</div>
@@ -28,8 +28,9 @@ class MeditationSessionsContainer extends Component {
 
 		return (
 		  <div>
+		  	<br /><br />
+		  	{ this.props.currentUser && <div>{this.props.currentUser.name}'s Sessions</div>}
 		    <br /><br />
-		  	This is the Meditation Sessions Controller
 		  	{ sessions }
 		  </div>
 		)

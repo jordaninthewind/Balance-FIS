@@ -3,7 +3,7 @@ import React from 'react';
 const UserInfo = (props) => {
 	return (
 		<div>
-			<div>User Name: {props.currentUserData.name}</div>
+			<h3>User Name: {props.currentUserData.name}</h3>
 			<div>Time Meditated: {props.currentUserData.timeSpentMeditating}</div>
 			<div>Location: {props.currentUserData.location}</div>
 		</div>

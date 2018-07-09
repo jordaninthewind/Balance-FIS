@@ -9,16 +9,13 @@ class UserContainer extends Component {
 	}
 
 	render() {
-		const currentUserData = this.props.users.filter(user => {
-			return user.id.toString() === this.props.currentUser;
-		})
-
 		return (
 			<div className="App-timer">
 				<br /><br />
 				<h1>Current User:</h1>
 				<br />
-				{ this.props.currentUser && <UserInfo currentUserData={currentUserData[0]} /> }
+				{ this.props.currentUser && <UserInfo currentUserData={this.props.currentUser} /> }
+				{ !this.props.currentUser && <h3>Please select a current user.</h3> }
 				<br />
 			</div>
 		)
@@ -27,7 +24,7 @@ class UserContainer extends Component {
 
 const mapStateToProps = state => {
 	return { 
-		currentUser: state.usersReducer.currentUser,
+		currentUser: state.usersReducer.currentUser[0],
 		users: state.usersReducer.users,
 	}
 }
