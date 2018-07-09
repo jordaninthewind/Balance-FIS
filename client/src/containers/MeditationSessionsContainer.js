@@ -6,7 +6,7 @@ class MeditationSessionsContainer extends Component {
 		super(props);
 	}
 
-	// componentDidMount() {
+ // componentDidMount() {
  //    	setInterval(this.selectQuote.bind(this), 15000);
  //    }
 
@@ -24,4 +24,4 @@ class MeditationSessionsContainer extends Component {
 // 	return { quotes: state.quotesReducer.quotes }
 // }
 
-export default MeditationSessionsContainer;
+export default connect(null, null)(MeditationSessionsContainer);

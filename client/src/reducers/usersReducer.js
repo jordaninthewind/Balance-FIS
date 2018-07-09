@@ -5,6 +5,7 @@ const setUsers = (users) => {
 
 const initialState = {
 	users: [],
+	currentUser: "",
 }
 
 export const getAllUsers = () => dispatch => {
@@ -14,7 +15,7 @@ export const getAllUsers = () => dispatch => {
 }
 
 export const setCurrentUser = (user) => {
-	return { type: "SET_CURRENT_USER", user}
+	return { type: "SET_CURRENT_USER", user }
 }
 
 export default function usersReducer(state = initialState, action) {
@@ -25,9 +26,9 @@ export default function usersReducer(state = initialState, action) {
 				users: action.users,
 			}
 		case "SET_CURRENT_USER":
-			return {
+			return { 
 				...state,
-				current_user: action.user,
+				currentUser: action.user,
 			}
 		default:
 			return state;
