@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 class Clock extends Component {
   constructor(props){
@@ -40,6 +41,21 @@ class Clock extends Component {
   	})
   }
 
+  saveSession = (e) => {
+    fetch("http://localhost:3001/meditation_sessions", {
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      method: "POST",
+      body: JSON.stringify({user_id: this.props.currentUser.id, time: this.state.timeCount})
+    })
+
+    .then(function(res){ console.log(res) })
+    .catch(function(res){ console.log(res) })
+  }
+
+
   render() {
   	const minutes = Math.floor(this.state.timeCount / 60);
   	const seconds = () => {
@@ -62,10 +78,16 @@ class Clock extends Component {
       		<button onClick={() => this.startClock()} >Start</button>
       		<button onClick={() => this.pauseClock()} >Pause</button>
       		<button onClick={() => this.resetClock()} >Reset</button>
-      		<button onClick={() => alert("Ya, not done yet.")} >Save</button>
+      		<button onClick={() => this.saveSession()} >Save</button>
       </div>
     );
   }
 }
 
-export default Clock;
+const mapStateToProps = state => {
+  return {
+    currentUser: state.usersReducer.currentUser[0],
+  }
+}
+
+export default connect(mapStateToProps, null)(Clock);
