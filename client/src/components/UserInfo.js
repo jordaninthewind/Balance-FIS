@@ -3,17 +3,17 @@ import React from 'react';
 const UserInfo = (props) => {
 	return (
 		<div>
-			<div>User Name: {props.name}</div>
-			<div>Time Meditated: {props.timeSpentMeditating}</div>
-			<div>Location: {props.location}</div>
+			<div>User Name: {props.currentUserData.name}</div>
+			<div>Time Meditated: {props.currentUserData.timeSpentMeditating}</div>
+			<div>Location: {props.currentUserData.location}</div>
 		</div>
 	);
 }
 
 UserInfo.defaultProps = {
-	name: "Paul",
-	timeSpentMeditating: "40 Hours",
-	location: "San Francisco, CA",
+	name: "",
+	timeSpentMeditating: "",
+	location: ""
 }
 
 export default UserInfo;
