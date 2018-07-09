@@ -7,25 +7,40 @@ class MeditationSessionsContainer extends Component {
 		super(props);
 	}
 
- componentDidMount() {
-
-    }
+	componentDidMount() {
+    
+	}
 
 	render() {
+		let sessions;
+ 	
+	 	if (this.props.currentUser){
+	 		if (this.props.currentUser.meditation_sessions.length > 0) {
+	 			sessions = this.props.currentUser.meditation_sessions.map(session => {
+	 				return <MeditationSession session={session} />
+	 			})
+	 		} else {
+	 			sessions = <div>"There are no sessions yet!"</div>
+	 		}
+	 	} else {
+	 		sessions = <div>"Select User to see sessions!"</div>;
+	 	}
+
 		return (
 		  <div>
 		    <br /><br />
 		  	This is the Meditation Sessions Controller
-
-		  	<MeditationSession session={{duration: 10, date: 200}} />
-		  	<MeditationSession session={{duration: 10, date: 200}} />
+		  	{ sessions }
 		  </div>
 		)
 	}
 }
 
 const mapStateToProps = state => {
-	return { currentUser: state.usersReducer.currentUser }
+	return { 
+		currentUser: state.usersReducer.currentUser[0],
+	}
 }
 
 export default connect(mapStateToProps, null)(MeditationSessionsContainer);
+

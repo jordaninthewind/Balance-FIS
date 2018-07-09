@@ -5,7 +5,7 @@ const MeditationSession = (props) => {
 		<div>
 			<hr style={{width: '40%'}}/>
 			<p>Duration: {props.session.duration}</p>
-			<p>Date: {props.session.date}</p>
+			<p>Date: {props.session.created_at}</p>
 		</div>
 	)
 };
