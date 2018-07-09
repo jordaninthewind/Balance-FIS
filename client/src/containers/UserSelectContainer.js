@@ -13,14 +13,16 @@ class UserSelectContainer extends Component {
 	}
 
   	componentDidMount() {
-  		if (!this.props.currentUser) {
-			this.props.getAllUsers();
-		}
+		this.props.getAllUsers();
     }
 
 	handleUserSelect = (e) => {
 		this.setState({ userSelection: e.target.value });
-		this.props.setCurrentUser(e.target.value);
+		const currentUser = this.props.users.filter(user => {
+			return user.id.toString() === e.target.value;
+		})
+		
+		this.props.setCurrentUser(currentUser);
 	}
 
 	render() {

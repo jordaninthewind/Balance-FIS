@@ -5,7 +5,7 @@ const setUsers = (users) => {
 
 const initialState = {
 	users: [],
-	currentUser: "",
+	currentUser: {},
 }
 
 export const getAllUsers = () => dispatch => {
