@@ -1,17 +1,15 @@
+const setQuotes = (quotes) => {
+	return { type: "GET_ALL_QUOTES", quotes }
+}
 
-const dummyQuotes = [
-	{content: "If we learn to open our hearts, anyone, including the people who drive us crazy, can be our teacher.", author: "Pema Chodron"}, 
-	{content: "The most fundamental aggression to ourselves, the most fundamental harm we can do to ourselves, is to remain ignorant by not having the courage and the respect to look at ourselves honestly and gently.", author: "Pema Chodron"},
-	{content: "You are the sky. Everything else – it’s just the weather.", author: "Pema Chodron"},
-	{content: "Fear is a natural reaction to moving closer to the truth.", author: "Pema Chodron"},
-	]
-
-// fetch('http://localhost:3001/quotes.json', {mode: 'cors', creditials: 'include'}).then(res => res.json()).then(json => console.log(json))
-
+export const getAllQuotes = () => dispatch => {
+	fetch('http://localhost:3001/quotes.json', {mode: 'cors', creditials: 'include'})
+		.then(res => res.json())
+		.then(json => dispatch(setQuotes(json)))
+}
 
 const initialState = {
-	quotes: dummyQuotes,
-	// quotes: [],
+	quotes: [],
 }
 
 export default function quotesReducer(state = initialState, action) {

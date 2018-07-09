@@ -1,5 +1,4 @@
 import React from 'react';
-// import { connect } from 'react-redux';
 
 const UserSelect = props => {
     const userSelection = props.users.map(user => {
@@ -7,7 +6,7 @@ const UserSelect = props => {
     })
 
     return (
-        <select onChange={props.userChange}>
+        <select onChange={(e) => props.userChange(e)} >
           {userSelection}
         </select>
     );

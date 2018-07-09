@@ -9,12 +9,11 @@ class Welcome extends Component {
     this.state = {
       userSelection: null,
     }
-
   }
 
-	handleChange = (e) => {
+	handleUserSelect = (e) => {
 		this.setState({
-		userSelection: e.target.value,
+			userSelection: e.target.value,
 		})
 	}
 
@@ -26,7 +25,7 @@ class Welcome extends Component {
 			  <p>Balance is a simple app to track your daily meditation, find inspiration through quotes and resources, and track progress.</p>
 			  <p>Select User to Track Progress</p>
 			  <p>
-			    <UserSelect users={this.props.users} userChange={this.handleChange} />
+			    <UserSelect users={this.props.users} userChange={this.handleUserSelect} />
 			  </p>
 			</div>
 		);
@@ -39,3 +38,4 @@ const mapStateToProps = state => {
 
 
 export default connect(mapStateToProps, null)(Welcome);
+// Map dispatch to props for current user data event?
