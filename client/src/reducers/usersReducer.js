@@ -27,8 +27,8 @@ export const createUser = (name, location) => dispatch => {
 	      method: "POST",
 	      body: JSON.stringify({new_user: {name: name, location: location}})
 	    })
-	    .then((res) => { return res.json() })
-	    .then(json => console.log(json))
+	    .then((res) => { res.json() })
+	    .then((json) =>{ console.log(json) })
 	    .catch((res) =>{ console.log(res) })
 }
 
@@ -43,6 +43,11 @@ export default function usersReducer(state = initialState, action) {
 			return { 
 				...state,
 				currentUser: action.user,
+			}
+		case "DELETE_USER": // Update
+			return {
+				...state,
+				users: action.users,
 			}
 		default:
 			return state;

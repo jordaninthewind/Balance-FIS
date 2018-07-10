@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { createUser } from '../reducers/usersReducer';
+import { createUser, getAllUsers } from '../reducers/usersReducer';
 import { connect } from 'react-redux';
 
 class NewUserForm extends Component {
@@ -14,7 +14,11 @@ class NewUserForm extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
-		this.props.createUser(this.state.name, this.state.location);	    
+		this.props.createUser(this.state.name, this.state.location);
+		this.setState({
+			name: "",
+			location: "",
+		})
 	}
 
 	handleChange = (e) => {
@@ -40,7 +44,8 @@ class NewUserForm extends Component {
 
 const mapDispatchToProps = dispatch => {
 	return {
-		createUser: (name, location) => dispatch(createUser(name, location))
+		createUser: (name, location) => dispatch(createUser(name, location)),
+		getAllUsers: () => dispatch(getAllUsers())
 	}
 }
 
