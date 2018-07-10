@@ -28,4 +28,14 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def destroy
+		@user = User.find(params[:id])
+		@user.meditation_sessions.destroy_all
+		@user.destroy
+		
+		respond_to do |f|
+			f.json { render json: '200'}
+		end
+	end
+
 end

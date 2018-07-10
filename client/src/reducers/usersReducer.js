@@ -1,11 +1,15 @@
 
+const initialState = {
+	users: [],
+	currentUser: {},
+}
+
 const setUsers = (users) => {
 	return { type: "GET_ALL_USERS", users }
 }
 
-const initialState = {
-	users: [],
-	currentUser: {},
+const deleteCurrentUser = (user) => {
+	return { type: "DELETE_USER", user }
 }
 
 export const getAllUsers = () => dispatch => {
@@ -29,7 +33,16 @@ export const createUser = (name, location) => dispatch => {
 	    })
 	    .then((res) => { res.json() })
 	    .then((json) =>{ console.log(json) })
-	    .catch((res) =>{ console.log(res) })
+	    // .catch((res) =>{ console.log(res) })
+}
+
+export const deleteUser = (user) => dispatch => {
+	fetch(`http://localhost:3001/users/${user.id}`, {
+		headers: {'Content-Type': 'application/json'},
+		method: "DELETE"
+	})
+	.then(res => res.json())
+	.then(json => console.log(json))
 }
 
 export default function usersReducer(state = initialState, action) {
