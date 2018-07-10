@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import UserSelect from '../components/UserSelect'
 import { getAllUsers, setCurrentUser } from '../reducers/usersReducer'
+import NewUserForm from '../components/NewUserForm'
 
 class UserSelectContainer extends Component {
 	constructor(props) {
@@ -34,6 +35,7 @@ class UserSelectContainer extends Component {
 			  	<p>
 			      <UserSelect users={this.props.users} userChange={this.handleUserSelect} />
 			  	</p>
+		  		<NewUserForm />
 			</div>
 		);
 	}
