@@ -44,13 +44,12 @@ class Clock extends Component {
   saveSession = (e) => {
     fetch("http://localhost:3001/meditation_sessions", {
       headers: {
-        'Accept': 'application/json',
+        // 'Accept': 'application/json',
         'Content-Type': 'application/json'
       },
       method: "POST",
       body: JSON.stringify({meditation_session: {user_id: this.props.currentUser.id, time: this.state.timeCount}})
     })
-
     .then(function(res){ console.log(res) })
     .catch(function(res){ console.log(res) })
   }

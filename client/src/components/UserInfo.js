@@ -4,7 +4,7 @@ const UserInfo = (props) => {
 	return (
 		<div>
 			<h3>User Name: {props.currentUserData.name}</h3>
-			<div>Time Meditated: {props.currentUserData.timeSpentMeditating}</div>
+			<div>Time Meditated: {props.currentUserData.total_time} seconds</div>
 			<div>Location: {props.currentUserData.location}</div>
 		</div>
 	);
