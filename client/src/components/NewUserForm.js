@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { createUser, getAllUsers } from '../reducers/usersReducer';
+import { createUser } from '../reducers/usersReducer';
 import { connect } from 'react-redux';
 
 class NewUserForm extends Component {
@@ -45,7 +45,6 @@ class NewUserForm extends Component {
 const mapDispatchToProps = dispatch => {
 	return {
 		createUser: (name, location) => dispatch(createUser(name, location)),
-		getAllUsers: () => dispatch(getAllUsers())
 	}
 }
 
