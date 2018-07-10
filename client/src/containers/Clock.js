@@ -48,7 +48,7 @@ class Clock extends Component {
         'Content-Type': 'application/json'
       },
       method: "POST",
-      body: JSON.stringify({user_id: this.props.currentUser.id, time: this.state.timeCount})
+      body: JSON.stringify({meditation_session: {user_id: this.props.currentUser.id, time: this.state.timeCount}})
     })
 
     .then(function(res){ console.log(res) })

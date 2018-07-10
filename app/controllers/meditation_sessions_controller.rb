@@ -1,14 +1,20 @@
+require 'pry'
+
 class MeditationSessionsController < ApplicationController
-	before_action :session_params
 
 	def create
-		@user = User.find(params[:user_id])
-		byebug
+		@user = User.find(session_params[:user_id])
+		@meditation_session = MeditationSession.new(:duration => session_params[:time])
+		@meditation_session.user = @user
+
+		if @meditation_session.save
+			@user.update(:total_time => (@meditation_session.duration + @user.total_time))
+		end
 	end
 
 	private
 
 	def session_params
-		params.require(:user_id, :time)
+		params.require(:meditation_session).permit(:user_id, :time)
 	end
 end
