@@ -4,11 +4,6 @@ import { connect } from 'react-redux';
 import { deleteUser } from '../reducers/usersReducer'
 
 class UserContainer extends Component {
-	constructor(props) {
-		super(props);
-
-	}
-
 	render() {
 		return (
 			<div className="App-timer">

@@ -9,7 +9,7 @@ class QuoteContainer extends Component {
 		super(props);
 
 		this.state = {
-			currentQuoteIndex: 4,
+			currentQuoteIndex: 0,
 		}
 	}
 

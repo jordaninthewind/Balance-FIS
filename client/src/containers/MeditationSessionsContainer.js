@@ -3,10 +3,6 @@ import { connect } from 'react-redux';
 import MeditationSession from '../components/MeditationSession'
 
 class MeditationSessionsContainer extends Component {
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
 		let sessions;
  	
@@ -25,7 +21,7 @@ class MeditationSessionsContainer extends Component {
 		return (
 		  <div>
 		  	<br /><br />
-		  	{ this.props.currentUser && <div>{this.props.currentUser.name}'s 
+		  	{ this.props.currentUser && <div>{this.props.currentUser.name}'s  
 		  		{this.props.currentUser.meditation_sessions.length > 0 ? 
 		  		 this.props.currentUser.meditation_sessions.length : 
 		  		 null } Sessions</div> }
