@@ -22,10 +22,12 @@ class MeditationSessionsContainer extends Component {
 	 		sessions = <div>"Select User to see sessions!"</div>;
 	 	}
 
+	 	debugger;
+
 		return (
 		  <div>
 		  	<br /><br />
-		  	{ this.props.currentUser && <div>{this.props.currentUser.name}'s <strong>{this.props.currentUser.meditation_sessions.length}</strong> Sessions</div> }
+		  	{ this.props.currentUser && <div>{this.props.currentUser.name}'s Sessions</div> }
 		    <br />
 		  	{ sessions }
 		  </div>

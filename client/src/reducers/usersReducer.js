@@ -1,7 +1,7 @@
 
 const initialState = {
 	users: [],
-	currentUser: {},
+	currentUser: null,
 }
 
 const setUsers = (users) => {
@@ -60,7 +60,7 @@ export default function usersReducer(state = initialState, action) {
 		case "DELETE_USER":
 			return {
 				...state,
-				currentUser: {},
+				currentUser: null,
 			}
 		default:
 			return state;
