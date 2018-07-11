@@ -18,7 +18,7 @@ class UserSelectContainer extends Component {
     }
 
 
-    // componentReceiveProps(nextProps) {
+    // componentWillReceiveProps(nextProps) {
     // 	this.props.getAllUsers();
     // }
 
