@@ -19,6 +19,7 @@ class NewUserForm extends Component {
 			name: "",
 			location: "",
 		})
+		// this.props.onSubmit.getAllUsers();
 	}
 
 	handleChange = (e) => {

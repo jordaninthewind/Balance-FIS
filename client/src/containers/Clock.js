@@ -96,7 +96,7 @@ class Clock extends Component {
 
 const mapStateToProps = state => {
   return {
-    currentUser: state.usersReducer.currentUser[0],
+    currentUser: state.usersReducer.currentUser,
   }
 }
 

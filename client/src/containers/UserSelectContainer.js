@@ -17,17 +17,17 @@ class UserSelectContainer extends Component {
 		this.props.getAllUsers();
     }
 
-    componentWillUpdate(nextProps) {
-    	
-    }
+
+    // componentReceiveProps(nextProps) {
+    // 	this.props.getAllUsers();
+    // }
 
 	handleUserSelect = (e) => {
 		this.setState({ userSelection: e.target.value });
 		const currentUser = this.props.users.filter(user => {
 			return user.id.toString() === e.target.value;
 		})
-		
-		this.props.setCurrentUser(currentUser);
+		this.props.setCurrentUser(currentUser[0]);
 	}
 
 	render() {
@@ -39,7 +39,7 @@ class UserSelectContainer extends Component {
 			  	<p>
 			      <UserSelect users={this.props.users} userChange={this.handleUserSelect} />
 			  	</p>
-		  		<NewUserForm />
+		  		<NewUserForm onSubmit={this.props.getAllUsers} />
 			</div>
 		);
 	}
