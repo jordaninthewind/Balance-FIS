@@ -18,10 +18,6 @@ export const setCurrentUser = (user) => {
 	return { type: "SET_CURRENT_USER", user }
 }
 
-const setNewUserAsCurrentUser = (user) => {
-	return { type: "SET_CURRENT_USER", user }
-}
-
 export const createUser = (name, location) => dispatch => {
 	fetch("http://localhost:3001/users", {
 	      headers: {
@@ -32,7 +28,7 @@ export const createUser = (name, location) => dispatch => {
 	      body: JSON.stringify({new_user: {name: name, location: location}})
 	    })
 	    .then(res => { return res.json() })
-	    .then(json =>{ dispatch(setNewUserAsCurrentUser(json)) })
+	    .then(json =>{ dispatch(setCurrentUser(json)) })
 	    .catch((res) =>{ console.log(res) })
 }
 

@@ -1,24 +1,21 @@
-# README
+# Balance-FIS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Balance is a simple meditation tracker app that allows for the creation of user accounts that follow user's meditation sessions and also provides inspirational quotes and resources (V2).
 
-Things you may want to cover:
+Installation Guide:
 
-* Ruby version
+Github Repo: https://github.com/jordaninthewind/succulence-fis-project/
 
-* System dependencies
+Balance makes use of bundler for Ruby gem handling and Node Package Manager (npm). To install, first run 'bundle install' in main directory and 'npm install' in '/client' directory. To run, from main directory, type 'rake start', as a rake task using the Foreman gem has been implemented to boot the front end client and the backend server.
 
-* Configuration
+Contributor's Guide:
 
-* Database creation
+All PRs will be considered, please reach out to jordan.kline@gmail.com if you would have requests or would like to contribute. Clean up and code reviews/comments will also always be considered and appreciated.
 
-* Database initialization
 
-* How to run the test suite
+License:
+(See LICENSE)
 
-* Services (job queues, cache servers, search engines, etc.)
+MIT License
 
-* Deployment instructions
-
-* ...
+Copyright (c) 2018 Jordan Kline
