@@ -10,10 +10,10 @@ class UsersController < ApplicationController
 	end
 
 	def index
-		@users = User.all
+		users = User.all
 
 		respond_to do |f|
-			f.json { render json: @users}
+			f.json { render json: users }
 		end
 	end
 

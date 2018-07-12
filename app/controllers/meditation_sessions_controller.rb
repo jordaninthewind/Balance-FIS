@@ -12,6 +12,16 @@ class MeditationSessionsController < ApplicationController
 		end
 	end
 
+	def index
+		binding.pry
+		@user = User.find(session_params[:user_id])
+		@meditations_sessions = @user.meditation_sessions
+
+		respond_to do |f|
+			render json: @meditation_sessions
+		end
+	end
+
 	private
 
 	def session_params
