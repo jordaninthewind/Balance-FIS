@@ -40,9 +40,9 @@ export const deleteUser = (user) => dispatch => {
 	fetch(`http://localhost:3001/users/${user.id}`, {
 		headers: {'Content-Type': 'application/json'},
 		method: "DELETE"
-	})
-	.then(res => { return res.json() })
-	.then(json => dispatch(deleteCurrentUser()))
+		})
+		.then(res => { return res.json() })
+		.then(json => dispatch(deleteCurrentUser()))
 }
 
 export default function usersReducer(state = initialState, action) {

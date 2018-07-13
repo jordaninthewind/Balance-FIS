@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  resources :meditation_sessions
   resources :quotes
-  resources :users
+  resources :users do
+  	resources :meditation_sessions
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

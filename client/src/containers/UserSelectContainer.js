@@ -17,7 +17,6 @@ class UserSelectContainer extends Component {
 		this.props.getAllUsers();
     }
 
-
     // componentWillReceiveProps(nextProps) {
     // 	this.props.getAllUsers();
     // }
@@ -27,7 +26,7 @@ class UserSelectContainer extends Component {
 		const currentUser = this.props.users.filter(user => {
 			return user.id.toString() === e.target.value;
 		})
-		this.props.setCurrentUser(currentUser[0]);
+		this.props.setCurrentUser(currentUser[0]); // filter returns an array, so don't remove this index reference
 	}
 
 	render() {

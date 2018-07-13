@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import MeditationSession from '../components/MeditationSession'
+import { getUserMeditationSessions } from '../reducers/meditationSessionsReducer'
 
 class MeditationSessionsContainer extends Component {
+
+	componentDidMount() {
+		if (this.props.currentUser) {
+			this.props.setUserMeditationSessions(this.props.currentUser);
+		}
+	}
+
 	render() {
 		let sessions;
  	
-	 	if (this.props.currentUser) {
-	 		if (this.props.currentUser.meditation_sessions.length > 0) {
-	 			sessions = this.props.currentUser.meditation_sessions.map(session => {
+	 	if (this.props.meditationSessions) {
+	 		if (this.props.meditationSessions.length > 0) {
+	 			sessions = this.props.meditationSessions.map(session => {
 	 				return <div key={session.id}><MeditationSession session={session} /><hr style={{width: '40%'}}/></div>
 	 			})
 	 		} else {
@@ -22,8 +30,8 @@ class MeditationSessionsContainer extends Component {
 		  <div>
 		  	<br /><br />
 		  	{ this.props.currentUser && <div>{this.props.currentUser.name}'s  
-		  		{this.props.currentUser.meditation_sessions.length > 0 ? 
-		  		 this.props.currentUser.meditation_sessions.length : 
+		  		{this.props.meditationSessions.length > 0 ? 
+		  		 this.props.meditationSessions.length : 
 		  		 null } Sessions</div> }
 		    <br />
 		  	{ sessions }
@@ -35,8 +43,15 @@ class MeditationSessionsContainer extends Component {
 const mapStateToProps = state => {
 	return { 
 		currentUser: state.usersReducer.currentUser,
+		meditationSessions: state.meditationSessionsReducer.meditationSessions,
 	}
 }
 
-export default connect(mapStateToProps, null)(MeditationSessionsContainer);
+const mapDispatchToProps = dispatch => {
+	return {
+		setUserMeditationSessions: (currentUser) => dispatch(getUserMeditationSessions(currentUser)),
+	}
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MeditationSessionsContainer);
 
