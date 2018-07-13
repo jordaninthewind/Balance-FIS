@@ -50,7 +50,7 @@ class UserSelectContainer extends Component {
 			  	<p>
 			      <UserSelect users={this.props.users} userChange={this.handleUserSelect} currentUser={this.props.currentUser} />
 			  	</p>
-				<p>or create a new account:</p>
+				<div>or create a new account:</div>
 			  {
 		  		!this.state.displayNewUser ? 
 		  			<button onClick={() => this.showNewUserForm()}>New User</button> : 
