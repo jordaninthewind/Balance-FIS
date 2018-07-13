@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import MeditationSession from '../components/MeditationSession'
-import { getUserMeditationSessions } from '../reducers/meditationSessionsReducer'
+import { getUserMeditationSessions, deleteMeditationSession } from '../reducers/meditationSessionsReducer'
 
 class MeditationSessionsContainer extends Component {
+	constructor(props) {
+		super(props);
+		
+	}
+
 
 	componentDidMount() {
 		if (this.props.currentUser) {
@@ -17,7 +22,14 @@ class MeditationSessionsContainer extends Component {
 	 	if (this.props.meditationSessions) {
 	 		if (this.props.meditationSessions.length > 0) {
 	 			sessions = this.props.meditationSessions.map(session => {
-	 				return <div key={session.id}><MeditationSession session={session} /><hr style={{width: '40%'}}/></div>
+	 				return (<div key={session.id}>
+			 					<MeditationSession 
+			 						session={session} 
+			 						currentUser={this.props.currentUser}
+			 						deleteSession={this.props.deleteMeditationSession} 
+			 					/>
+			 					<hr style={{width: '40%'}}/>
+	 						</div>)
 	 			})
 	 		} else {
 	 			sessions = <div>"There are no sessions yet!"</div>
@@ -53,6 +65,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
 	return {
 		setUserMeditationSessions: (currentUser) => dispatch(getUserMeditationSessions(currentUser)),
+		deleteMeditationSession: (currentUser, session) => dispatch(deleteMeditationSession(currentUser, session))
 	}
 }
 

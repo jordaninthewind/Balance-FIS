@@ -21,6 +21,14 @@ class MeditationSessionsController < ApplicationController
 		end
 	end
 
+	def destroy
+		@meditation_session = MeditationSession.find(params[:id])
+
+		if @meditation_session.user_id.to_s == params[:user_id]
+			@meditation_session.destroy
+		end
+	end
+
 	private
 
 	def session_params

@@ -16,6 +16,16 @@ export const getUserMeditationSessions = (currentUser) => dispatch => {
 		.then(json => { dispatch(setMeditationSessions(json))})
 }
 
+// const deleteMeditationSession = (meditationSession) => {
+// 	return { type: "DELETE_"}
+// }
+
+export const deleteMeditationSession = (currentUser, session) => dispatch => {
+	fetch(`http://localhost:3001/users/${currentUser.id}/meditation_sessions/${session}`, {
+		method: "DELETE"
+	})
+}
+
 export default function meditationSessionsReducer(state = initialState, action) {
 	switch (action.type) {
 		case "GET_USER_MEDITATION_SESSIONS":
