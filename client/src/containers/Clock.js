@@ -43,15 +43,15 @@ class Clock extends Component {
 
   saveSession = (e) => {
     if (this.props.currentUser) {
-      fetch("http://localhost:3001/meditation_sessions", {
+      fetch(`http://localhost:3001/users/${this.props.currentUser.id}/meditation_sessions`, {
         headers: {
           // 'Accept': 'application/json',
           'Content-Type': 'application/json'
         },
         method: "POST",
-        body: JSON.stringify({meditation_session: {user_id: this.props.currentUser.id, time: this.state.timeCount}})
+        body: JSON.stringify({meditation_session: {time: this.state.timeCount}})
         })
-        .then(function(res){ console.log(res) ; alert("Saved session!") })
+        .then(function(res){ alert("Saved session!") })
         .catch(function(res){ console.log(res) })
 
         this.setState({

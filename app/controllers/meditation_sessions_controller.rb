@@ -3,16 +3,13 @@ require 'pry'
 class MeditationSessionsController < ApplicationController
 
 	def create
-		binding.pr
-		@user = User.find(session_params[:user_id])
+		@user = User.find(params[:user_id])
 		@meditation_session = MeditationSession.new(:duration => session_params[:time])
 		@meditation_session.user = @user
 
 		if @meditation_session.save
 			@user.update(:total_time => (@meditation_session.duration + @user.total_time))
 		end
-
-		# on this return, add returned value to current state
 	end
 
 	def index
@@ -27,6 +24,6 @@ class MeditationSessionsController < ApplicationController
 	private
 
 	def session_params
-		params.require(:meditation_session).permit(:user_id, :time)
+		params.require(:meditation_session).permit(:time)
 	end
 end
