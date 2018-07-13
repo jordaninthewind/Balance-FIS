@@ -14,6 +14,7 @@ class NewUserForm extends Component {
 
 	handleSubmit = (e) => {
 		e.preventDefault();
+		this.props.removeForm();
 		this.props.createUser(this.state.name, this.state.location);
 		this.setState({
 			name: "",

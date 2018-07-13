@@ -4,12 +4,7 @@ import MeditationSession from '../components/MeditationSession'
 import { getUserMeditationSessions, deleteMeditationSession } from '../reducers/meditationSessionsReducer'
 
 class MeditationSessionsContainer extends Component {
-	constructor(props) {
-		super(props);
-		
-	}
-
-
+	
 	componentDidMount() {
 		if (this.props.currentUser) {
 			this.props.setUserMeditationSessions(this.props.currentUser);

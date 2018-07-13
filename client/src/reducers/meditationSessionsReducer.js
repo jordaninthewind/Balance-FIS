@@ -6,6 +6,10 @@ const setMeditationSessions = (meditationSessions) => {
 	return { type: "GET_USER_MEDITATION_SESSIONS", meditationSessions }
 }
 
+export const resetMeditationSessions = () => {
+	return { type: "RESET_USER_MEDITATION_SESSIONS" }
+}
+
 export const getUserMeditationSessions = (currentUser) => dispatch => {
 	fetch(`http://localhost:3001/users/${currentUser.id}/meditation_sessions.json`) // , {mode: 'cors', creditials: 'include' })
 		.then(res => { return res.json() })

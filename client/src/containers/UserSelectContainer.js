@@ -10,6 +10,7 @@ class UserSelectContainer extends Component {
 
     	this.state = {
     	  userSelection: null,
+    	  displayNewUser: false,
     	}
 	}
 
@@ -17,16 +18,27 @@ class UserSelectContainer extends Component {
 		this.props.getAllUsers();
     }
 
-    // componentWillReceiveProps(nextProps) {
-    // 	this.props.getAllUsers();
-    // }
-
 	handleUserSelect = (e) => {
-		this.setState({ userSelection: e.target.value });
+		this.setState({ 
+			userSelection: e.target.value,
+		});
+
 		const currentUser = this.props.users.filter(user => {
 			return user.id.toString() === e.target.value;
 		})
 		this.props.setCurrentUser(currentUser[0]); // filter returns an array, so don't remove this index reference
+	}
+
+	removeNewUserForm = () => {
+		this.setState({
+			displayNewUser: false,
+		})
+	}
+
+	showNewUserForm = () => {
+		this.setState({
+			displayNewUser: true,
+		})
 	}
 
 	render() {
@@ -38,7 +50,14 @@ class UserSelectContainer extends Component {
 			  	<p>
 			      <UserSelect users={this.props.users} userChange={this.handleUserSelect} />
 			  	</p>
-		  		<NewUserForm onSubmit={this.props.getAllUsers} />
+			  {
+		  		!this.state.displayNewUser ? 
+		  			<button onClick={() => this.showNewUserForm()}>New User</button> : 
+		  			<NewUserForm 
+		  				onSubmit={this.props.getAllUsers} 
+		  				removeForm={this.removeNewUserForm}
+		  			/>
+		  	  }
 			</div>
 		);
 	}
