@@ -31,8 +31,6 @@ class NewUserForm extends Component {
 	render() {
 		return (
 			<div>
-				<br />
-				<p>or create a new account:</p>
 				<form onSubmit={(e) => this.handleSubmit(e)} >
 					Username: <input onChange={this.handleChange} name="name" value={this.state.name} /><br />
 					Location: <input onChange={this.handleChange} name="location" value={this.state.location} /><br />

@@ -48,8 +48,9 @@ class UserSelectContainer extends Component {
 			  	<p>Balance is a simple app to track your daily meditation, find inspiration through quotes and resources, and track progress.</p>
 			  	<p>Select User to Track Progress</p>
 			  	<p>
-			      <UserSelect users={this.props.users} userChange={this.handleUserSelect} />
+			      <UserSelect users={this.props.users} userChange={this.handleUserSelect} currentUser={this.props.currentUser} />
 			  	</p>
+				<p>or create a new account:</p>
 			  {
 		  		!this.state.displayNewUser ? 
 		  			<button onClick={() => this.showNewUserForm()}>New User</button> : 
