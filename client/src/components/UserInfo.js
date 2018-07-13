@@ -1,19 +1,22 @@
 import React from 'react';
 
 const UserInfo = (props) => {
+	const minutes = Math.floor(props.currentUserData.total_time / 60);
+	const totalMinutes = minutes % 60;
+	const hours = Math.floor(minutes / 60);
+	const seconds = (props.currentUserData.total_time % 60);
+	
 	return (
 		<div>
 			<h3>User Name: {props.currentUserData.name}</h3>
-			<div>Time Meditated: {props.currentUserData.total_time} seconds</div>
+				<div>Total Time: 
+					{" " + hours}
+					:{ totalMinutes < 10 ? "0" + totalMinutes : totalMinutes }
+					:{seconds}
+				</div>
 			<div>Location: {props.currentUserData.location}</div>
 		</div>
 	);
 }
-
-// UserInfo.defaultProps = {
-// 	name: "",
-// 	timeSpentMeditating: "4,000,000,000 hours",
-// 	location: ""
-// }
 
 export default UserInfo;
