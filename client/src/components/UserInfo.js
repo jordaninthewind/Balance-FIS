@@ -12,7 +12,7 @@ const UserInfo = (props) => {
 				<div>Total Time: 
 					{" " + hours}
 					:{ totalMinutes < 10 ? "0" + totalMinutes : totalMinutes }
-					:{seconds}
+					:{ seconds < 10 ? "0" + seconds : seconds }
 				</div>
 			<div>Location: {props.currentUserData.location}</div>
 		</div>
