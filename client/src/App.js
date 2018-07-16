@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { BrowserRouter, Route, Link } from "react-router-dom";
 import TitleBar from './components/TitleBar.js';
 import QuoteContainer from './containers/QuoteContainer';
@@ -17,13 +18,10 @@ class App extends Component {
             <div className="App-navbar">
               <Link to="/" >Home</Link>
               <span>  -  </span> 
-              <Link to="/user" >Account</Link>
-              <span>  -  </span> 
               <Link to="/meditation_sessions" >Meditation Sessions</Link>
               <span>  -  </span> 
               <Link to="/timer" >Timer</Link>
               <Route exact path="/" component={UserSelectContainer} />
-              <Route exact path="/user" component={UserContainer} />
               <Route exact path="/meditation_sessions" component={MeditationSessionsContainer} />
               <Route path="/timer" component={TimerContainer} />
             </div>
@@ -34,4 +32,10 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    currentUser: state.usersReducer.currentUser
+  }
+}
+
+export default connect(mapStateToProps, null)(App);

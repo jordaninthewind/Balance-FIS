@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import UserSelect from '../components/UserSelect'
-import { getAllUsers, setCurrentUser } from '../reducers/usersReducer'
-import NewUserForm from '../components/NewUserForm'
+import UserSelect from '../components/UserSelect';
+import { getAllUsers, setCurrentUser } from '../reducers/usersReducer';
+import NewUserForm from '../components/NewUserForm';
+import UserContainer from './UserContainer';
 
 class UserSelectContainer extends Component {
 	constructor(props) {
@@ -45,7 +46,10 @@ class UserSelectContainer extends Component {
 		return (
 			<div className="App-welcome">
 				<h2>Find Balance!</h2>
-			  	<p>Balance is a simple app to track your daily meditation, find inspiration through quotes and resources, and track progress.</p>
+			  	<div>Balance is a simple app to track your daily meditation, find inspiration through quotes and resources, and track progress.</div>
+			  	{
+			  		this.props.currentUser ? <UserContainer /> : null
+			  	}
 			  	<p>Select User to Track Progress</p>
 			  	<p>
 			      <UserSelect users={this.props.users} userChange={this.handleUserSelect} currentUser={this.props.currentUser} />

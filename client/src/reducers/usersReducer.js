@@ -32,7 +32,7 @@ export const createUser = (name, location) => dispatch => {
 	    .catch((res) =>{ console.log(res) })
 }
 
-const deleteCurrentUser = () => {
+export const deleteCurrentUser = () => {
 	return { type: "DELETE_USER" }
 }
 
