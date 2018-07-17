@@ -34,7 +34,7 @@ class MeditationSessionsContainer extends Component {
 	 	}
 
 		return (
-		  <div>
+		  <div className='App-component'>
 		  	<br /><br />
 		  	{ 
 		  		this.props.currentUser && <div>{this.props.currentUser.name}'s Sessions</div> 

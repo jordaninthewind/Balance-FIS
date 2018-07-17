@@ -26,9 +26,10 @@ class QuoteContainer extends Component {
 	render() {
 		return (
 		  <div className="App-footer">
-		  	{ this.props.quotes.length && <Quote 
-		  		quote={this.props.quotes[this.state.currentQuoteIndex]} 
-		  	/>}
+		  	{ this.props.quotes.length && 
+		  		<Quote 
+		  		  quote={this.props.quotes[this.state.currentQuoteIndex]} 
+		  		/>}
 		  </div>
 		)
 	}

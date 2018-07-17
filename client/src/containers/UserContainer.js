@@ -6,7 +6,7 @@ import { deleteUser, deleteCurrentUser } from '../reducers/usersReducer'
 class UserContainer extends Component {
 	render() {
 		return (
-			<div style={{display: 'inline'}}>
+			<div className='App-component'>
 				<hr />
 				<h2>Logged In As:</h2>
 				{ this.props.currentUser && <UserInfo currentUserData={this.props.currentUser} /> }

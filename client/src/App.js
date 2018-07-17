@@ -7,6 +7,7 @@ import UserContainer from './containers/UserContainer';
 import MeditationSessionsContainer from './containers/MeditationSessionsContainer'
 import TimerContainer from './containers/TimerContainer';
 import UserSelectContainer from './containers/UserSelectContainer';
+import ResourcesContainer from './containers/ResourcesContainer'
 import './App.css';
 
 class App extends Component {
@@ -21,9 +22,12 @@ class App extends Component {
               <Link to="/meditation_sessions" >Meditation Sessions</Link>
               <span>  -  </span> 
               <Link to="/timer" >Timer</Link>
+              <span> - </span>
+              <Link to="/resources" >Resources</Link>
               <Route exact path="/" component={UserSelectContainer} />
               <Route exact path="/meditation_sessions" component={MeditationSessionsContainer} />
               <Route path="/timer" component={TimerContainer} />
+              <Route path="/resources" component={ResourcesContainer} />
             </div>
           </BrowserRouter>
         <QuoteContainer />
