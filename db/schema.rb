@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20180705172843) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "meditation_sessions", force: :cascade do |t|
     t.integer "duration"
     t.integer "user_id"
