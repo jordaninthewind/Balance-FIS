@@ -1,12 +1,12 @@
 .App {
+  display: flex;
+  flex-flow: column;
+  align-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
   font-family: Raleway;
-  /*width: 500px;*/
-}
-
-#body {
-  width: 500px;
-  position: fixed; 
+  width: 65%;
 }
 
 .App-header {
@@ -17,9 +17,8 @@
   left: 0;
   top: 0px;
   width: 100%;
-  height: 70px;
-  /*margin-bottom: 70px;*/
-  /*z-index: 1;*/
+  min-height: 50px;
+  height: 7vh;
 }
 
 .App-footer {
@@ -35,7 +34,7 @@
 }
 
 .App-component {
-  /*margin-top: 70px;*/
+  margin-top: 70px;
   /*background-color: white;*/
   /*color: rgba(100,20,255,.5);*/
   /*font-size: 1.2em;*/
@@ -47,7 +46,7 @@
 
 .App-navbar {
   position: relative;
-  top: 70px;
+  top: 7vh;
   color: rgba(100,20,255,.5);
   font-size: 1.5em;
 }
