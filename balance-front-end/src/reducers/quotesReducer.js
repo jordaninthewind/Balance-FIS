@@ -3,7 +3,7 @@ const setQuotes = (quotes) => {
 }
 
 export const getAllQuotes = () => dispatch => {
-	fetch('http://localhost:3001/quotes.json', {mode: 'cors', creditials: 'include'})
+	fetch('http://localhost:3001/quotes.json')
 		.then(res => res.json())
 		.then(json => dispatch(setQuotes(json)))
 }

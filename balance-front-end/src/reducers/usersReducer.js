@@ -9,8 +9,8 @@ const setUsers = (users) => {
 }
 
 export const getAllUsers = () => dispatch => {
-	fetch('http://localhost:3001/users.json', {mode: 'cors', creditials: 'include'})
-		.then(res => {return res.json()})
+	fetch('http://localhost:3001/users.json')
+		.then(res => res.json())
 		.then(json => dispatch(setUsers(json)))
 }
 

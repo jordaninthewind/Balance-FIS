@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
 	def index
 		users = User.all
-
+		binding.pry
 		respond_to do |f|
 			f.json { render json: users }
 		end
