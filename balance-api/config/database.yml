@@ -32,12 +32,12 @@ development:
   # username: jordankline
 
   # The password associated with the postgres role (username).
-  password: wordword
+  # password: wordword
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
   # domain sockets, so uncomment these lines.
-  #host: localhost
+  # host: localhost
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
@@ -57,7 +57,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: balance_app_test
+  database: postgres_app_test
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: balance_app_production
+  database: postgres_app_production
   username: postgres_app
   password: <%= ENV['POSTGRES_APP_DATABASE_PASSWORD'] %>
