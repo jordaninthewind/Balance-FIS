@@ -2,11 +2,10 @@ require 'pry'
 
 class UsersController < ApplicationController
 	def create
-		# @user = User.new(:name => params[:new_user][:name], :location => params[:new_user][:location], :total_time => 0)
 		@user = User.new(user_params)
 
 		if @user.save
-			redirect_to @user
+			render json: @user
 		end	
 	end
 
@@ -31,10 +30,10 @@ class UsersController < ApplicationController
 	def login
 		@user = User.find_by(:email => params[:login_user][:email])
 
-		if !@user 
-			render json: {verified: false}
+		if !@user
+			render json: {error_message: "User doesn't exist."}
 		elsif !@user.authenticate(params[:login_user][:password])
-			render json: {verified: false}
+			render json: {error_message: "Incorrect password."}
 		else
 			render json: @user
 		end
@@ -43,10 +42,10 @@ class UsersController < ApplicationController
 	private
 
 	def user_params
-		require(:new_user).permit(:name, :last_name, :password, :location, :email)
+		params.require(:new_user).permit(:name, :last_name, :location, :password, :email)
 	end
 
 	def login_params
-		require(:login_user).permit(:email, :password)
+		params.require(:login_user).permit(:email, :password)
 	end
 end
