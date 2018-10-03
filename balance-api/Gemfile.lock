@@ -44,6 +44,7 @@ GEM
       minitest (~> 5.1)
       tzinfo (~> 1.1)
     arel (8.0.0)
+    bcrypt (3.1.12)
     builder (3.2.3)
     byebug (10.0.2)
     case_transform (0.2)
@@ -142,6 +143,7 @@ PLATFORMS
 
 DEPENDENCIES
   active_model_serializers
+  bcrypt (~> 3.1.7)
   byebug
   foreman
   jbuilder (~> 2.5)
@@ -156,4 +158,4 @@ DEPENDENCIES
   tzinfo-data
 
 BUNDLED WITH
-   1.16.1
+   1.16.3
